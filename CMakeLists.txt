@@ -15,6 +15,8 @@ set(SOKOL_HEADERS
 )
 add_library(sokol STATIC sokol.c ${SOKOL_HEADERS})
 
+target_include_directories(sokol PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
 if (WIN32)
     target_link_libraries(sokol PRIVATE
             d3d11
